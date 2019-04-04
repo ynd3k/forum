@@ -1,0 +1,546 @@
+
+//================
+// Foundation
+//================
+@import './Foundation/reset';
+$theme-color-1: #55c500;
+$theme-color-1-light: #5ac608;
+$bg-color: #f6f6f6;
+$padding-s: 5px;
+$padding-m: 10px;
+$padding-l: 15px;
+$padding-xl: 20px;
+$padding-xxl: 25px;
+$margin-s: 5px;
+$margin-m: 10px;
+$margin-l: 15px;
+$margin-xl: 20px;
+$margin-xxl: 25px;
+$border-1: 2px solid #fff;
+
+$breakpoints:(
+    'sm': 'screen and (max-width: 480px)',
+    'md': 'screen and (max-width: 768px)',
+    'lg': 'screen and (max-width: 1000px)',
+) !default;
+@mixin mq_sm($breakpoint: sm) {
+    @media #{map-get($breakpoints, $breakpoint)}{
+        @content;
+    }
+}
+@mixin mq_md($breakpoint: md){
+    @media #{map-get($breakpoints, $breakpoint)}{
+        @content;
+    }
+}
+
+//================
+// Layout
+//================
+.l-top-container{
+    background: $theme-color-1;
+    text-align: center;
+    padding: 10px $padding-xxl;
+    font-size: 1.5em;
+    color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    height: 53px;
+    display: flex;
+    justify-content: space-between;
+    &__left{
+        padding-top: 4px;
+    }
+    &__right{
+
+    }
+}
+.l-signup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 97vh;
+    background: linear-gradient(to bottom, #32deaf, 65%,#55c500);
+}
+//================
+// Object
+//================
+
+//----------------
+// component
+//----------------
+.c-bt{
+    border: none;
+    font-size: 0.8rem;
+    color: #fff;
+    background: $theme-color-1;
+    border: $border-1;
+    padding: $padding-s $padding-m;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.c-input{
+    padding: $padding-s;
+    padding-left: $padding-m;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 0.7rem;
+    box-shadow: inset 0 1px 2px #ccc;
+    box-sizing: border-box;
+}
+//----------------
+// project
+//----------------
+
+.p-top{
+    display: flex;
+    &__logo{
+        color: #fff;
+        text-decoration: none;
+        margin-right: $margin-l;
+    }
+    &__search{
+        padding: $padding-s;
+        padding-left: $padding-m;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        background-color: #fff;
+        font-size: 0.8rem;
+        box-shadow: inset 0 1px 2px #ccc;
+    }
+    &__bt{
+        margin-right: $margin-l;
+        @include mq_sm(){
+            display: none;
+        }
+    }
+    &__menu{
+        border: $border-1;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 35px;
+        height: 30px;
+        position: relative;
+        &__line{
+            left: 7px;
+            background: #fff;
+            width: 60%;
+            height: 2px;
+            position: absolute;
+            &:nth-child(1){
+                top: 5px;
+            }
+            &:nth-child(2){
+                top: 14px;
+            }
+            &:nth-child(3){
+                bottom: 5px;
+            }
+        }
+        &__slide{
+            position: absolute;
+            width: 200px;
+            top: 40px;
+            right: 0;;
+            background: #fefefe;
+            z-index: 1;
+            text-align: left;
+            box-shadow: 0 0 5px $theme-color-1;
+            & a{
+                text-decoration: none;
+                color: #666;
+                font-size: 0.6em;
+                vertical-align: middle;
+            }
+            &__item{
+                border-bottom: 1px solid #ccc;
+                padding: 10px 15px;
+                &:hover{
+                    background: beige;
+                }
+            }
+        }
+    }
+}
+
+.p-signup{
+    width: 50%;
+    color: #fff;
+    padding: $padding-xxl;
+    & *{
+        padding: $padding-l 0;
+        box-sizing: border-box;
+        margin-bottom: $margin-xxl;
+    }
+    &__form{
+        font-size: 1.2em;
+        padding-left: $padding-l;
+        padding-right: $padding-l;
+        margin-top: $margin-m;
+    }
+    &__bt{
+        margin-bottom: 0;
+        font-size: 1.2em;
+        padding-left: 30px;
+        padding-right: 30px;
+        background: transparent; 
+    }
+    &__save{
+        position: relative;
+        padding: 0;
+        margin-bottom: 55px;
+        &__checkbox{
+            width: 100%;
+            opacity: 0;
+            padding: 0;
+            margin: 0;
+        }
+        &__icon{
+            position: absolute;
+            top: 19px;
+            left: 0px;
+            padding: 0;
+            margin: 0;
+            font-size: 40px;
+            cursor: pointer;
+            &--hide{
+                display: none !important;
+            }
+        }
+    }
+}
+.p-prof-upload{
+    display: flex;
+    flex-direction: column;
+    &__img{
+        width: 150px;
+        height: 150px;
+        padding: 0;
+        border-radius: 50%;
+        border: $border-1;
+        margin: 0 auto;
+        margin-bottom: $margin-xxl;
+    }
+    & label > input{
+        display: none;
+    }
+    & label{
+        text-align: center;
+        background:transparent;
+        border: $border-1;
+        cursor: pointer;
+    }
+}
+//----------------
+// utility
+//----------------
+$err-color: #ed504e;
+.u-err-msg{
+    color: $err-color;
+}
+.u-err-border{
+    border: 2px solid $err-color;
+    box-shadow: 3px 3px 15px $err-color;
+    outline: none
+}
+.u-d-block{
+    display: block;
+}
+.u-d-none{
+    display: none;
+}
+.c-err-msg{
+    display: block;
+    padding: $padding-m 0 $padding-s 0;
+    margin: 0;
+}
+.c-err-msg-common{
+    display: block;
+    padding: $padding-m 0 $padding-l 0;
+    margin: 0;
+}
+
+.l-body-wrapper{
+    background: $bg-color;
+    // ログイン画面のログインを維持するの'る'が改行になる直前
+    min-width: 288px;
+}
+.l-container-wrapper{
+    display: flex;
+    margin: 30px 50px;
+    @include mq_md(){
+        flex-direction: column;
+    }
+}
+.l-side-container{
+    width: 20%;
+    @include mq_md(){
+        display: none;
+    }
+}
+.l-side-container-sp{
+    display: none;
+    @include mq_md(){
+        display: flex; 
+    }
+}
+.l-main-container{
+    width: 80%;
+    background: beige;
+    @include mq_md(){
+        width: 100%;
+    }
+}
+.p-sidebar{
+    background: transparent;
+    color: #666;
+    padding: 8px 8px 8px 16px;
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 0.85em;
+    cursor: pointer;
+    @include mq_md(){
+        margin-bottom: 0;
+        padding: 10px 12px;
+    }
+    &--active{
+        background: #00ca00;
+        color: #fff;
+        &:hover{
+            background: #00ca00 !important;
+        }
+    }
+    &__text{
+        text-decoration: none;
+        color: #666;
+        &--active{
+            color: #fff;
+        }
+        @include mq_md(){
+            display: none;
+        }
+    }
+    &:hover{
+        background: #ddd;
+    }
+}
+.p-paging{
+    display: flex;
+    padding-left: $padding-m;
+    &__item{
+        border-bottom: 2px solid #ccc;
+        padding: $padding-m;
+        margin-right: $margin-s;
+        &--active{
+            border-bottom: 2px solid $theme-color-1-light;
+        }
+        &__num{
+            text-decoration: none;
+            color: #ccc;
+            &--active{
+                color: $theme-color-1-light;
+            }
+        }
+    }
+}
+.l-card-container{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+    padding: $padding-m;
+}
+.l-card-wrapper{
+    line-height: 1.5; 
+    flex-grow: 1;
+    @include mq_md(){
+        line-height: 1.3;
+    }
+}
+.c-card{
+    display: flex;
+    flex-grow: 1;
+    &__img{
+        display: block;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        margin-right: $margin-m;
+    }
+    &__info{
+        color: #666;
+        font-size: 0.8em;
+        display: flex;
+        justify-content: space-between;
+        @include mq_md(){
+            width: 100%;
+        }
+    }
+    &__like{
+        font-size: 1.1em;
+        cursor: pointer; 
+        &--active{
+            color: #fd647e;
+        }  
+    }
+    &__edit{
+        position: absolute;
+        top: -13px;
+        right: 0;
+        &--sp{
+            @include mq_md(){
+                display: none;
+            }
+        }
+    }
+    &__msg{
+        margin-bottom: $margin-s;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+        color: #222;
+    }
+    @include mq_sm(){
+        flex-grow: 1 !important;
+    }
+}
+.p-search{
+    display: flex;
+}
+.u-d-flex{
+    display: flex;
+}
+
+.p-search-tag-wrapper{
+    overflow: hidden;
+    text-align: center;
+    & select{
+        width: 100%;
+        padding-left: $padding-l;
+        cursor: pointer;
+        border: $border-1;
+        outline: none;
+        background: #fefefe;
+        background-image: none;
+        box-shadow: none;
+        text-overflow: ellipsis;
+        -webkit-appearance: none;
+        color: #666;
+    }
+}
+
+.p-msg-post{
+    width: 50%;
+    display: flex;
+    margin-right: $margin-m;
+    margin-top: $margin-s;
+    &__input{
+        font-size: 0.9rem;
+    }
+    @include mq_md(){
+        display: none;
+    }
+}
+.p-msg-post-md{
+    margin-top: $margin-l;
+    display: none;
+    &__input{
+        margin: 0;
+        padding: $padding-m $padding-xl;
+        font-size: 1.05em;
+
+    }
+    &__btn{
+        width: 100%;
+        font-size: 1.05em;
+        padding: $padding-m $padding-l;
+    }
+    @include mq_md(){
+        display: block;
+    }
+}
+.u-flex-between{
+    justify-content: space-between;
+}
+.u-w-100{
+    width: 100%;
+}
+.l-card-info-wrapper{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.c-select-box{
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 7px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border: 1px solid $theme-color-1-light;
+    outline: none;
+    background: #fefefe;
+    background-image: none;
+    box-shadow: none;
+    text-overflow: ellipsis;
+    -webkit-appearance: none;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.u-flex-row-reverse{
+    flex-direction: row-reverse;
+}
+.u-flex-grow-none{
+    flex-grow: 0;
+}
+.u-bg-beige{
+    background: beige;
+}
+.l-dm-form{
+    padding: $padding-s $padding-m;
+    margin-top: $margin-m;
+    &__input{
+        margin: 0;
+        padding: $padding-m $padding-xl;
+        font-size: 1.05em;
+        @include mq_md(){
+            padding: $padding-l;
+            font-size: 0.9em;
+        }
+    }
+    &__btn{
+        width: 100%;
+        font-size: 1.05em;
+        padding: $padding-m $padding-l;
+    }
+}
+.p-notification{
+    font-size: 0.9em;
+    background-color: rgba(95, 204, 13, 0.95);
+    padding: $padding-l $padding-xxl;
+    color: #fff;
+    display: inline-block;
+    border-radius: 10px;
+    position: absolute;
+    top: 70px;
+    left: -300px;
+}
+.l-header{
+    position: relative;
+}
+.p-form-edit{
+    &__input{
+        font-size:0.9em;
+        color:#666;
+        margin-top:7px;
+        padding:10px;
+        border:1px solid #5ac608 ;
+    }
+    &__btn{
+        font-size:0.9em;
+        padding:8px 16px;
+    }
+}
