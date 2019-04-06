@@ -2,7 +2,7 @@
 
 require('function.php');
 delog('##################');
-delog('トップページ');
+delog('トップページ!');
 delogStart();
 
 require('head.php');
