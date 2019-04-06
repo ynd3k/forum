@@ -142,7 +142,7 @@ require('header.php');
       <!-- メッセージ一覧表示 -->
       <div class="l-card-container">
         <div class="c-card">
-          <img class="c-card__img" src="<?php echo getNameAndPic1($val['user_id'])['pic1'];?>">
+          <img class="c-card__img" src="<?php echo sanitize( getNameAndPic1($val['user_id'])['pic1'] );?>">
           <div class="l-card-wrapper">
             <p class="c-card__msg">
               <i class="far fa-heart c-card__like js-click-favo <?php if(isFavo($_SESSION['user_id'],$val['msg_id'])) echo 'c-card__like--active';?>" data-messageid="<?php echo sanitize($val['msg_id']);?>"></i>
