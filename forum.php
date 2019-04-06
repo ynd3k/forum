@@ -172,7 +172,7 @@ require('header.php');
                 }else{
                   if($value['id'] == $val['tag_id']) echo 'selected';
                 }
-              ?>><?php echo $value['name'];?>
+              ?>><?php echo sanitize($value['name']);?>
             </option>
             <?php endforeach;?>
           </select>
