@@ -12,7 +12,7 @@ if(!empty($_SESSION['user_id'])){
     delog('セッションに有効期限内です,login_dateを更新し、掲示板ページに遷移します');
     $_SESSION['login_date'] = time();
     if(basename($_SERVER['PHP_SELF']) === 'login.php'){
-      header("Location:forum.php");
+      header("Location:index.php");
     }
   }else{
     delog('セッションが有効期限外です..セッション削除を行います');

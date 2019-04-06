@@ -1,7 +1,7 @@
 <div class="l-side-container">
     <div class="p-sidebar p-sidebar--active">
       <i class="fas fa-desktop p-sidebar__icon"></i>
-      <a class="p-sidebar__text p-sidebar__text--active" href="forum.php">トップ</a>
+      <a class="p-sidebar__text p-sidebar__text--active" href="index.php">トップ</a>
     </div>
     <div class="p-sidebar js-click-side-favo" data-cmn="<?php echo $currentMinNum;?>" data-listspan="<?php echo $listSpan;?>">
       <i class="far fa-heart p-sidebar__icon"></i>

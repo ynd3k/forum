@@ -496,7 +496,7 @@ function msgEdit($postMsg,$dbMsg,$key,$msg_id,$postTag,$dbTag,$p,$search,$tag){
 
         $_SESSION['msg-success'] = SUC01;
 
-        header("Location:forum.php?p=".$p."&search=".$search."&tag=".$tag);
+        header("Location:index.php?p=".$p."&search=".$search."&tag=".$tag);
 
       }catch(Exception $e){
         error_log('エラー発生：'.$e->getMessage());
@@ -511,7 +511,7 @@ function msgEdit($postMsg,$dbMsg,$key,$msg_id,$postTag,$dbTag,$p,$search,$tag){
       $data = array(':t_id'=>$postTag,':m_id'=>$msg_id);
       $stmt = queryPost($dbh,$sql,$data);
       $_SESSION['msg-success'] = SUC01;
-      header("Location:forum.php?p=".$p."&search=".$search."&tag=".$tag);
+      header("Location:index.php?p=".$p."&search=".$search."&tag=".$tag);
 
 
     }catch(Exception $e){
@@ -534,7 +534,7 @@ function msgEdit($postMsg,$dbMsg,$key,$msg_id,$postTag,$dbTag,$p,$search,$tag){
         $data = array(':t_id'=>$postTag,':m_id'=>$msg_id);
         $stmt = queryPost($dbh,$sql,$data);
         $_SESSION['msg-success'] = SUC01;
-        header("Location:forum.php?p=".$p."&search=".$search."&tag=".$tag);
+        header("Location:index.php?p=".$p."&search=".$search."&tag=".$tag);
 
 
       }catch(Exception $e){

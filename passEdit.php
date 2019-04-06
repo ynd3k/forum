@@ -53,7 +53,7 @@
 
 //           sendMail($from,$to,$subject,$comment);
 
-          header("Location:forum.php");
+          header("Location:index.php");
           exit();
         }
       }catch(Exception $e){

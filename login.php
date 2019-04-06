@@ -50,7 +50,7 @@
             $_SESSION['msg-success'] = 'ログインしました';
 
             delog('新規ログイン時のセッション変数：'.print_r($_SESSION,true));
-            header("Location:forum.php");
+            header("Location:index.php");
             exit;
           }else{
             delog('パスが不一致..');

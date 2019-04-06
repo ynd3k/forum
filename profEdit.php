@@ -65,7 +65,7 @@
         $stmt = queryPost($dbh,$sql,$data);
         if($stmt){
           $_SESSION['msg-success'] = 'プロフィールを編集しました。';
-          header('Location:forum.php');
+          header('Location:index.php');
           exit;
         }
       }catch(Exception $e){
