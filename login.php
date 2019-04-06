@@ -104,8 +104,8 @@
 <div class="l-signup-container">
   <form class="p-signup" method="post">
     <p style="line-height: 1.7;color: #fff">テスト用アカウント<br>
-    メールアドレス： <span style="color:#444;">t@t.t</span><br>
-    パスワード: <span style="color: #444;">t</span></p>
+    メールアドレス： <span style="color:#111;">t@t.t</span><br>
+    パスワード: <span style="color: #111;">t</span></p>
     <span class="u-err-msg <?php if(!empty($err_msg['common'])) echo 'c-err-msg-common';?>"><?php if(!empty($err_msg['common'])) echo $err_msg['common'];?></span>
 
     <label>メールアドレス
