@@ -15,18 +15,18 @@ if(!empty($_POST)){
   $pass = $_POST['pass'];
   $repass = $_POST['repass'];
 
-  validEmpty($email,'email');
-  validMaxLen($email,'email');
-  validEmail($email,'email');
-  validEmailDup($email,'email');
+  // validEmpty($email,'email');
+  // validMaxLen($email,'email');
+  // validEmail($email,'email');
+  // validEmailDup($email,'email');
 
-  validEmpty($pass,'pass');
-  validMinLen($pass,'pass');
-  validMaxLen($pass,'pass');
-  validHalf($pass,'pass');
+  // validEmpty($pass,'pass');
+  // validMinLen($pass,'pass');
+  // validMaxLen($pass,'pass');
+  // validHalf($pass,'pass');
 
-  validEmpty($repass,'repass');
-  validMatch($pass,$repass,'repass');
+  // validEmpty($repass,'repass');
+  // validMatch($pass,$repass,'repass');
 
   if(empty($err_msg)){
     delog('バリデーションおｋです');
