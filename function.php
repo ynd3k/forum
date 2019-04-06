@@ -34,7 +34,7 @@ session_start();
 session_regenerate_id();
 
 $err_msg = array();
-$delog_flg = true;
+$delog_flg = false;
 
 function delog($str){
   global $delog_flg;
@@ -379,15 +379,15 @@ function profInputHold($key){
     //POST送信されてたら
     if($_POST[$key] !== $value[0][$key] && !empty($_POST[$key])){
       //delog('POSTされていて、DBとPOSTの値が違う');
-      return $_POST[$key];
+      return sanitize($_POST[$key]);
     }else{
 
       //delog('POSTのされてるが変更がない');
       if(empty($_POST['zip'])){
         $value[0]['zip'] = '';
-        return $value[0][$key];
+        return sanitize($value[0][$key]);
       }else{
-        return $value[0][$key];
+        return sanitize($value[0][$key]);
       }
 
     }
@@ -397,9 +397,9 @@ function profInputHold($key){
     //zipがデフォルトの０だったら空文字にする
     if(empty($value[0]['zip'])){
       $value[0]['zip'] = '';
-      return $value[0][$key];
+      return sanitize($value[0][$key]);
     }else{
-      return $value[0][$key];
+      return sanitize($value[0][$key]);
     }
   }
 
