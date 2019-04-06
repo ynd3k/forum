@@ -103,7 +103,7 @@ require('header.php');
     </div>
     <div class="u-d-none p-search-tag-wrapper"><!-- -->
       <form method="get" class="u-d-flex p-search">
-        <select name="tag" style="width: auto;">
+        <select name="tag" style="width:  auto;">
           <option value="0">タグを選ぶ</option>
 
           <?php foreach($dbTagData as $key => $val):?>
