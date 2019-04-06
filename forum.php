@@ -150,7 +150,7 @@ require('header.php');
             </p>
             <div class="l-card-info-wrapper">
               <p class="c-card__info">
-                <a href="directMsg.php?u_id=<?php echo $val['user_id'];?>" style="text-decoration-color:#5ac608;color:#47a500;">
+                <a href="directMsg.php?u_id=<?php echo sanitize($val['user_id']);?>" style="text-decoration-color:#5ac608;color:#47a500;">
                   <span><?php echo getNameAndPic1($val['user_id'])['name'];?></span>
                 </a> 
                 <span style="margin-left:10px;"><?php echo sanitize($val['create_date']);?></span>
