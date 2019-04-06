@@ -81,14 +81,14 @@ if(!empty($_POST)){
       <!-- メッセージ一覧表示 -->
       <div class="l-card-container u-flex-row-reverse">
         <div class="c-card <?php if($val['from_user'] == $myId) echo 'u-flex-grow-none'?>">
-          <img class="c-card__img" src="<?php echo get($val['from_user'])['pic1'];?>">
+          <img class="c-card__img" src="<?php echo sanitize(get($val['from_user'])['pic1']);?>">
           <div class="l-card-wrapper">
             <p class="c-card__msg">
               <span class="js-show-edit"><?php echo sanitize($val['msg']);?></span>
             </p>
             <div class="l-card-info-wrapper">
               <p class="c-card__info">
-                <?php echo get($val['from_user'])['name'];?>  
+                <?php echo sanitize(get($val['from_user'])['name']);?>  
                 <?php echo sanitize($val['create_date']);?>
               </p>
             </div>
