@@ -68,10 +68,10 @@
 <?php require('noticeMsg.php');?>
 
 <div class="l-signup-container">
-  <p>テスト用アカウント(パスワードは「t」が6こです)</p>
-  <p>メールアドレス： t@t.t</p>
-  <p>パスワード tttttt</p>
   <form class="p-signup" method="post">
+    <p>テスト用アカウント(パスワードは「t」が6こです)
+    メールアドレス： t@t.t
+    パスワード tttttt</p>
     <span class="u-err-msg <?php if(!empty($err_msg['common'])) echo 'c-err-msg-common';?>"><?php if(!empty($err_msg['common'])) echo $err_msg['common'];?></span>
 
     <label>メールアドレス
