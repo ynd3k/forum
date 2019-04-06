@@ -72,7 +72,7 @@
   <form class="p-signup" method="post">
     <span class="u-err-msg <?php if(!empty($err_msg['common'])) echo 'c-err-msg-common';?>"><?php if(!empty($err_msg['common'])) echo $err_msg['common'];?></span>
 
-    <label>メールアドレス
+    <label>メールアドレス!@555
         <span class="u-err-msg <?php if(!empty($err_msg['email'])) echo 'c-err-msg';?>"><?php if(!empty($err_msg['email'])) echo $err_msg['email'];?></span>
         <input type="text" class="c-input p-signup__form <?php if(!empty($err_msg['email'])) echo 'u-err-border';?>" name="email" value="<?php echo inputHold('email');?>">
     </label>
