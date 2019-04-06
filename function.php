@@ -2,7 +2,7 @@
 
 ini_set('log_errors','on');
 ini_set('error_log','php.log') ;
-ini_set('display_errors',1);
+// ini_set('display_errors',1);
 
 define('MSG01','入力必須です。');
 define('MSG02','255文字以内で入力してください。');
