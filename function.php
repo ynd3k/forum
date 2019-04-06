@@ -608,7 +608,7 @@ function getNameAndPic1($msg_user_id){
     $stmt = queryPost($dbh,$sql,$data);
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result;
+    return sanitize($result);
   }catch(Exception $e){
     error_log($e->getMessage());
   }
