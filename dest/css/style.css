@@ -112,6 +112,7 @@ input, select {
   cursor: pointer; }
 
 .c-input {
+  -webkit-appearance: none;
   padding: 5px;
   padding-left: 10px;
   width: 100%;
