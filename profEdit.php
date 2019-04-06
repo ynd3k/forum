@@ -79,7 +79,7 @@
 ?>
 <?php require('noticeMsg.php');?>
 
-<div class="l-signup-container">
+<div class="l-signup-container l-prof-edit-container">
   <form class="p-signup" method="post" enctype="multipart/form-data">
       
     <label>名前
