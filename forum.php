@@ -93,7 +93,7 @@ require('header.php');
     </div>
     <div class="u-d-none p-search-wrapper">
       <form method="get" class="p-search">
-        <input type="text" class="c-input" name="search">
+        <input type="text" class="c-input p-search__input" name="search">
         <input type="submit" value="検索" class="c-bt">
       </form>
     </div>
@@ -102,8 +102,8 @@ require('header.php');
       <a class="p-sidebar__text">タグ検索</a>
     </div>
     <div class="u-d-none p-search-tag-wrapper"><!-- -->
-      <form method="get" class="u-d-flex">
-        <select name="tag">
+      <form method="get" class="u-d-flex p-search">
+        <select name="tag" style="width: auto;">
           <option value="0">タグを選ぶ</option>
 
           <?php foreach($dbTagData as $key => $val):?>

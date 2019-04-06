@@ -19,10 +19,16 @@ $margin-xxl: 25px;
 $border-1: 2px solid #fff;
 
 $breakpoints:(
+    'xs': 'screen and (max-width: 400px)',
     'sm': 'screen and (max-width: 480px)',
     'md': 'screen and (max-width: 768px)',
     'lg': 'screen and (max-width: 1000px)',
 ) !default;
+@mixin mq_xs($breakpoint: xs) {
+    @media #{map-get($breakpoints, $breakpoint)}{
+        @content;
+    }
+}
 @mixin mq_sm($breakpoint: sm) {
     @media #{map-get($breakpoints, $breakpoint)}{
         @content;
@@ -408,13 +414,24 @@ $err-color: #ed504e;
 }
 .p-search{
     display: flex;
+    @include mq_xs(){
+        position: absolute;
+        top: 33px;
+        left: -39px;
+        &__input{
+            width: 120px!important;
+        }
+    }
 }
 .u-d-flex{
     display: flex;
 }
-
+.p-search-wrapper{
+    position: relative;
+}
 .p-search-tag-wrapper{
-    overflow: hidden;
+    position: relative;
+    // overflow: hidden;
     text-align: center;
     & select{
         width: 100%;
