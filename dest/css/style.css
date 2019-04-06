@@ -102,6 +102,7 @@ input, select {
   background: linear-gradient(to bottom, #32deaf, 65%, #55c500); }
 
 .c-bt {
+  -webkit-appearance: none;
   border: none;
   font-size: 0.8rem;
   color: #fff;
