@@ -165,7 +165,7 @@ require('header.php');
           <select class="js-get-edit-tag c-select-box" name="tag">
             <option value="0">タグを選択してください</option>
             <?php foreach ($dbTagData as $key => $value):?>
-            <option value="<?php echo $value['id'];?>"
+            <option value="<?php echo sanitize($value['id']);?>"
               <?php 
                 if(!empty($_POST)){
                   // if($value['id'] == $postTag) echo 'selected';
