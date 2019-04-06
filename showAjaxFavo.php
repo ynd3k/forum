@@ -24,15 +24,15 @@ try{
         foreach($result['data'] as $key => $val):?>
             <div class="l-card-container">
                 <div class="c-card">
-                    <img class="c-card__img" src="<?php echo getNameAndPic1($val['user_id'])['pic1'];?>">
+                    <img class="c-card__img" src="<?php echo sanitize( getNameAndPic1($val['user_id'])['pic1'] );?>">
                     <div class="l-card-wrapper">
                         <p class="c-card__msg">
                             <i class="far fa-heart c-card__like js-click-favo <?php if(isFavo($_SESSION['user_id'],$val['msg_id'])) echo 'c-card__like--active';?>" data-messageid="<?php echo sanitize($val['msg_id']);?>"></i>
                             <span class="js-show-edit"><?php echo sanitize($val['msg']);?></span>
                         </p>
                         <p class="c-card__info">
-                            <a href="directMsg.php?u_id=<?php echo $val['user_id'];?>" style="text-decoration-color:#5ac608;color:#47a500;">
-                            <span ><?php echo getNameAndPic1($val['user_id'])['name'];?></span>
+                            <a href="directMsg.php?u_id=<?php echo sanitize($val['user_id']);?>" style="text-decoration-color:#5ac608;color:#47a500;">
+                            <span ><?php echo sanitize(getNameAndPic1($val['user_id'])['name']);?></span>
                             </a> <?php echo sanitize($val['create_date']);?>
                         </p>
                     </div>
