@@ -87,6 +87,7 @@ $breakpoints:(
     cursor: pointer;
 }
 .c-input{
+    -webkit-appearance: none;
     padding: $padding-s;
     padding-left: $padding-m;
     width: 100%;
