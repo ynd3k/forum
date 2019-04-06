@@ -98,11 +98,10 @@ input, select {
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* height: 97vh; */
+  height: 97vh;
   background: linear-gradient(to bottom, #32deaf, 65%, #55c500); }
 
 .c-bt {
-  -webkit-appearance: none;
   border: none;
   font-size: 0.8rem;
   color: #fff;
@@ -391,12 +390,22 @@ input, select {
 
 .p-search {
   display: flex; }
+  @media screen and (max-width: 400px) {
+    .p-search {
+      position: absolute;
+      top: 33px;
+      left: -39px; }
+      .p-search__input {
+        width: 120px !important; } }
 
 .u-d-flex {
   display: flex; }
 
+.p-search-wrapper {
+  position: relative; }
+
 .p-search-tag-wrapper {
-  overflow: hidden;
+  position: relative;
   text-align: center; }
   .p-search-tag-wrapper select {
     width: 100%;

@@ -93,8 +93,8 @@ require('header.php');
     </div>
     <div class="u-d-none p-search-wrapper">
       <form method="get" class="p-search">
-        <input type="text" class="c-input p-search__input" name="search">
-        <input type="submit" value="検索" class="c-bt">
+          <input type="text" class="c-input p-search__input" name="search">
+          <input type="submit" value="検索" class="c-bt">
       </form>
     </div>
     <div class="p-sidebar js-click-search-tag">
@@ -103,7 +103,7 @@ require('header.php');
     </div>
     <div class="u-d-none p-search-tag-wrapper"><!-- -->
       <form method="get" class="u-d-flex p-search">
-        <select name="tag" style="width:  auto;">
+        <select name="tag" style="width: auto;">
           <option value="0">タグを選ぶ</option>
 
           <?php foreach($dbTagData as $key => $val):?>
@@ -142,7 +142,7 @@ require('header.php');
       <!-- メッセージ一覧表示 -->
       <div class="l-card-container">
         <div class="c-card">
-          <img class="c-card__img" src="<?php echo sanitize( getNameAndPic1($val['user_id'])['pic1'] );?>">
+          <img class="c-card__img" src="<?php echo getNameAndPic1($val['user_id'])['pic1'];?>">
           <div class="l-card-wrapper">
             <p class="c-card__msg">
               <i class="far fa-heart c-card__like js-click-favo <?php if(isFavo($_SESSION['user_id'],$val['msg_id'])) echo 'c-card__like--active';?>" data-messageid="<?php echo sanitize($val['msg_id']);?>"></i>
@@ -150,8 +150,8 @@ require('header.php');
             </p>
             <div class="l-card-info-wrapper">
               <p class="c-card__info">
-                <a href="directMsg.php?u_id=<?php echo sanitize($val['user_id']);?>" style="text-decoration-color:#5ac608;color:#47a500;">
-                  <span><?php echo sanitize( getNameAndPic1($val['user_id'])['name'] );?></span>
+                <a href="directMsg.php?u_id=<?php echo $val['user_id'];?>" style="text-decoration-color:#5ac608;color:#47a500;">
+                  <span><?php echo getNameAndPic1($val['user_id'])['name'];?></span>
                 </a> 
                 <span style="margin-left:10px;"><?php echo sanitize($val['create_date']);?></span>
               </p>
@@ -165,14 +165,14 @@ require('header.php');
           <select class="js-get-edit-tag c-select-box" name="tag">
             <option value="0">タグを選択してください</option>
             <?php foreach ($dbTagData as $key => $value):?>
-            <option value="<?php echo sanitize($value['id']);?>"
+            <option value="<?php echo $value['id'];?>"
               <?php 
                 if(!empty($_POST)){
                   // if($value['id'] == $postTag) echo 'selected';
                 }else{
                   if($value['id'] == $val['tag_id']) echo 'selected';
                 }
-              ?>><?php echo sanitize($value['name']);?>
+              ?>><?php echo $value['name'];?>
             </option>
             <?php endforeach;?>
           </select>
