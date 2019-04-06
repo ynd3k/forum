@@ -12,7 +12,7 @@
 
       <div class="l-top-container__right">
         <div class="p-top">
-          <form action="index.php">
+          <form action="signup.php">
             <input type="submit" class="c-bt p-top__bt" value="ユーザ登録">
           </form>
           <?php if( isLogin() ):?>
