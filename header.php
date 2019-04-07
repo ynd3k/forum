@@ -33,6 +33,7 @@
               <div class="p-top__menu__slide__item"><a href="index.php">投稿TOP</a></div>
               <div class="p-top__menu__slide__item"><a href="passEdit.php">パスワード変更</a></div>
               <div class="p-top__menu__slide__item"><a href="profEdit.php">プロフィール編集</a></div>
+              <div class="p-top__menu__slide__item"><a href="signup.php">新規登録</a></div>
               <div class="p-top__menu__slide__item"><a href="login.php">ログイン</a></div>
               <div class="p-top__menu__slide__item"><a href="logout.php">ログアウト</a></div>
             </div>
