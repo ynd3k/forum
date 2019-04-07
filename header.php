@@ -4,6 +4,15 @@
       <div class="l-top-container__left">
           <div class="p-top">
             <a href="index.php" class="p-top__logo">Forum</a>
+            <div style="
+              display: flex;
+              font-size: 0.55em;
+              align-items: center;
+              "><div>テスト用アカウントで<a href="login.php" style="
+              text-decoration-color: #fff;
+              color: #fff;
+              ">ログイン</a>できます</div>
+            </div>
             <!-- <form class="p-top__form" method="get">
               <input type="text" name="search" class="p-top__search" placeholder="キーワードを入力">
             </form> -->
