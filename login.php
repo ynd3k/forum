@@ -20,7 +20,7 @@
       $login_save_flg = (!empty($_POST['login_save'])) ? true : false;
 
       //テスト用垢だけ
-      if($email === 't@t.t' && $pass === 't'){
+      if($email === 't' && $pass === 't'){
 
         try {
           $dbh = dbConnect();
