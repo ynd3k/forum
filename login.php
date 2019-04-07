@@ -20,7 +20,7 @@
       $login_save_flg = (!empty($_POST['login_save'])) ? true : false;
 
       //テスト用垢だけ
-      if($email === 't' && $pass === 't'){
+      if($email === 'a' && $pass === 'a'){
 
         try {
           $dbh = dbConnect();
@@ -105,9 +105,9 @@
   <form class="p-signup" method="post">
     <p style="line-height: 1.5;color: #fff">テスト用アカウント<br>
     メールアドレス：
-    <span style="color:#111;">t</span><br>
+    <span style="color:#111;">a</span><br>
     パスワード:
-    <span style="color: #111;">t</span></p>
+    <span style="color: #111;">a</span></p>
     <span class="u-err-msg <?php if(!empty($err_msg['common'])) echo 'c-err-msg-common';?>"><?php if(!empty($err_msg['common'])) echo $err_msg['common'];?></span>
 
     <label>メールアドレス
